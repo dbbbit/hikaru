@@ -30,6 +30,6 @@ make debug：
     x/t 0x0         查看内存0x0 处的数据，二进制显示
     x/x 0x0         十六进制,BCD 方式显示
     
-###[参考链接]
+###［参考链接］
 
 1. [`CMOS` ](http://wiki.osdev.org/CMOS)
