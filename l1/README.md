@@ -1,12 +1,19 @@
-###［实验环境准备］
+###［环境准备］
 
-0. `Linux` | `Unix`
-1. `NASM`	跨平台的汇编编译器
-2. `QEMU`	可调试的模拟器，比 `bochs` 容易使用
+0. 目前只在 Mac 上实验过，其他系统请自行尝试。
+1. `NASM`	汇编编译器 [link >](http://www.nasm.us/)
+```sh
+    brew install nasm
+```
+2. `QEMU`	可调试的模拟器 (比 `bochs` 更容易使用)
+```sh
+    brew install qemu
+```
 3. `GDB`	调试工具
 
 ### ［启动］
 
+Makefile 已经写好了几个命令方便开发。
 make build	编译并生成可用的软盘镜像  
 make boot	启动  
 
@@ -16,16 +23,16 @@ make boot	启动
 
 make debug：	
 	
-	qemu 开机后会自动挂起，开始监听调试端口，等待调试指令。
+	qemu 开机后会自动挂起，开始监听调试端口（默认端口1234），等待调试指令。
 	具体 qemu --help 查看相关参数意义。
 
 在另一个 `shell` 中输入
 
 	>	gdb
 	>	target remote :1234
-	>	info reg
+	>	info reg   ;查看寄存器值
 	>	c
-	> 	^ctrl-c    ;手动执行
+	> 	^ctrl-c    ;手动执行（bootloader 无限循环中，故需终止)
 	> 	info reg 	
 
 即可查看到寄存器的数值。
