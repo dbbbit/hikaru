@@ -1,4 +1,5 @@
-        mov ax, 200     ;decimal
+        mov ax, 0x1     ;decimal
+        mov cx, 0x2     ;decimal
 hang: 
         jmp hang           
 
