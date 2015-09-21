@@ -1,14 +1,9 @@
 ###［内容］
-
-0. `端口 IO`
-1. `CMOS` 时间读取
-2.  写数据到内存
-
 从 `cmos` 读取月和日数据到内存单元，并用 `gdb` 查看结果。
 
 ### ［编译］
 
-make build	  
+make   
 
 ### ［调试］
 
@@ -22,6 +17,9 @@ make debug：
 
 相关`gdb` 调试命令:   
  
+    c               continue  
+    si              step  
+
     x               查看内存数据  
 
     x/i 0x7c00      查看指令,不一定准确
@@ -33,3 +31,5 @@ make debug：
 ###［参考链接］
 
 1. [`CMOS` ](http://wiki.osdev.org/CMOS)
+2. [`GDB Continuing and stepping`](http://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_37.html)
+3. [`NASM Tutorial`](http://cs.lmu.edu/~ray/notes/nasmtutorial/)
