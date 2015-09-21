@@ -1,15 +1,17 @@
 ###［环境准备］
 
-0. 目前只在 Mac 上实验过，其他系统请自行尝试。
-1. `NASM`	汇编编译器 [link >](http://www.nasm.us/)
+- 目前只在 Mac 上实验过，其他系统请自行尝试。
+- `NASM`	[汇编编译器](http://www.nasm.us/)
 ```sh
     brew install nasm
 ```
-2. `QEMU`	可调试的模拟器 (比 `bochs` 更容易使用)
+
+- `QEMU`	可调试的模拟器 (比 `bochs` 更容易使用)
 ```sh
     brew install qemu
 ```
-3. `GDB`	调试工具
+
+- `GDB`	调试工具
 
 ### ［启动］
 
@@ -38,7 +40,7 @@ make debug：
 即可查看到寄存器的数值。
 
 
-### ［任务］
+### ［HOMEWORK］
 
 1. 观察启动后的 ip 寄存器变化。
 2. 修改 boot.asm, 重新编译，调试观察效果。
