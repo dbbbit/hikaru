@@ -13,7 +13,7 @@ init_target_addr:
 init_source_addr:
     mov ax, 0x07c0
     mov ds, ax
-    mov si, 0
+    mov si, msg
 
 print_loop: 
     mov al, [ds:si] ;0x7c0 * 4 + 0 = 0x7c00
