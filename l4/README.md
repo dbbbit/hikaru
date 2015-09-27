@@ -1,3 +1,9 @@
-### 时钟中断
-1. 需要了解 `BIOS` 在 `boot` 代码前做了什么。  
-2. 通过打印不断变化的字符，观察时钟中断.   
+### A & B
+
+- A & B
+
+
+### 参考
+
+- [Real Mode](http://wiki.osdev.org/Real_mode)
+- [Interrupt Vector Table](http://wiki.osdev.org/Interrupt_Vector_Table)
