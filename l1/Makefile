@@ -1,5 +1,5 @@
 all:	
-	nasm boot.asm -f bin -o boot.bin
+	nasm boot.asm -f bin -l boot.lst -o boot.bin 
 	qemu-img create floppy.img 1.44k
 	dd if=boot.bin of=./floppy.img bs=512 count=1
 
