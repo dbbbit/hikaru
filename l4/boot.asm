@@ -33,14 +33,13 @@ ir0_handler:
         yeild_to_a_next_time:
             mov ax, 0x0000
             mov [GLOBAL_VAR], ax
-print:
-    mov ax, VIDEO_MEMORY
-    mov es, ax
-    mov [es:di], cl
-    add di, 2
+    print:
+        mov ax, VIDEO_MEMORY
+        mov es, ax
+        mov [es:di], cl
+        add di, 2
 
-inc_global_var:
-send_end_signal:    
+    send_end_signal:    
         mov al, 0x20
         out 0x20, al
     iret
