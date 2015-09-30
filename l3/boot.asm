@@ -1,4 +1,5 @@
 [bits 16]
+[org 0x7c00]
 
 define_the_consts:
     p_buf equ 0xb800
@@ -10,13 +11,9 @@ init_target_addr:
     mov es, ax
     mov di, 0x0
 
-init_source_addr:
-    mov ax, 0x07c0
-    mov ds, ax
-    mov si, msg
-
+mov si, 0
 print_loop: 
-    mov al, [ds:si] ;0x7c0 * 4 + 0 = 0x7c00
+    mov al, [msg+si] ;0x7c0 * 4 + 0 = 0x7c00
     mov [es:di], al
     inc si
     add di, 2
