@@ -1,11 +1,11 @@
 # Bare Bones
 
-为后续的接入高级语言开发环境(C/Rust)打下基础。
+为后续的接入高级语言开发环境 (C/Rust) 打下基础。  
 此刻, Nasm 依然是唯一的编译器伙伴。
 
 ## Setup
 
-Install binutils from source. ( Linker 出场)
+Install binutils from source.
 
 ```bash
 $ wget http://ftp.gnu.org/gnu/binutils/binutils-2.24.tar.gz
@@ -21,9 +21,11 @@ $ make && make install
 $ make
 $ make debug
 ```
-### Some explain
+
+### Some tips
 
 - `$@` in Makefile means current target name, `$<` means the dependency name
+- use gdb to observe the layout of memory, `x/10x 0x100000` will helps.
 
 ## Ref
 
