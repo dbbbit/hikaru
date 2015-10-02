@@ -7,3 +7,4 @@
 - l3 输出 `$` 到屏幕
 - l4 A & B
 - l5 Play with Grub
+- l6 Rust!
