@@ -1,4 +1,4 @@
-![Hikaru](https://s-media-cache-ak0.pinimg.com/736x/0c/ce/e6/0ccee61679773d07457c01a3d9336ebe.jpg)
+![Hikaru](https://s-media-cache-ak0.pinimg.com/474x/e7/27/6d/e7276d72fa7bbfb3d78d2f1e2a898e6e.jpg)
 
 # Content
 
