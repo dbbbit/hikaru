@@ -2,7 +2,14 @@
 
 ## A20
 
-- 8086 RAM < 64k (0x10000)
-- 80286 RAM < 1M (0x100000)
+- real mode < 64k
 
 [A20 LINE](http://wiki.osdev.org/A20)
+
+
+## GDT
+
+    GDT 的作用是用来提供段式存储机制.
+
+- [Global Descriptor Table](http://wiki.osdev.org/Global_Descriptor_Table)
+- [GDT Tutorial](http://wiki.osdev.org/GDT_Tutorial)
