@@ -2,7 +2,7 @@
 
 ## A20
 
-real mode < 64k
+    real mode < 64k
 
 - [A20 LINE](http://wiki.osdev.org/A20)
 
@@ -13,3 +13,4 @@ real mode < 64k
 
 - [Global Descriptor Table](http://wiki.osdev.org/Global_Descriptor_Table)
 - [GDT Tutorial](http://wiki.osdev.org/GDT_Tutorial)
+
