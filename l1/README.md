@@ -22,18 +22,21 @@
 
 ## 调试
 
-make debug：	
-	
-	qemu 开机后会自动挂起，开始监听调试端口（默认端口1234），等待调试指令。
-	具体 qemu --help 查看相关参数意义。
+```sh
+$ make debug
+```
+qemu 开机后会自动挂起，开始监听调试端口（默认端口1234），等待调试指令。
+具体 qemu --help 查看相关参数意义。
 
 在另一个 `shell` 中输入
 
-	>	gdb
-	>	target remote :1234
-	>	info reg   ;查看寄存器值
-	>	c
-	> 	^ctrl-c    ;手动执行（bootloader 无限循环中，故需终止)
-	> 	info reg 	
+```sh
+$ gdb
+$ target remote :1234
+$ info reg   ;查看寄存器值
+$ c
+$ ^ctrl-c    ;手动执行（bootloader 无限循环中，故需终止)
+$ info reg 	
+```
 
 即可查看到寄存器的数值。

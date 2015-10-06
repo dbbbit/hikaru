@@ -1,10 +1,10 @@
-### A & B
+# A & B
 
 - A & B
 
     press any keyboard button to get `B`
 
-### 参考
+## 参考
 
 - [Real Mode](http://wiki.osdev.org/Real_mode)
 - [Interrupt Vector Table](http://wiki.osdev.org/Interrupt_Vector_Table)

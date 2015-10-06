@@ -1,13 +1,11 @@
-###［内容］
+## 内容
 从 `cmos` 读取月和日数据到内存单元，并用 `gdb` 查看结果。
 
-### ［编译］
+## 调试
 
-make   
-
-### ［调试］
-
-make debug：	
+```bash
+$ make debug：	
+```
 
 在另一个 `shell` 中输入
 
@@ -28,8 +26,8 @@ make debug：
     x/t 0x0         查看内存0x0 处的数据，二进制显示
     x/x 0x0         十六进制,BCD 方式显示
     
-###［参考链接］
+## 参考链接
 
-1. [`CMOS` ](http://wiki.osdev.org/CMOS)
-2. [`GDB Continuing and stepping`](http://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_37.html)
-3. [`NASM Tutorial`](http://cs.lmu.edu/~ray/notes/nasmtutorial/)
+* [`CMOS` ](http://wiki.osdev.org/CMOS)
+* [`GDB Continuing and stepping`](http://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_37.html)
+* [`NASM Tutorial`](http://cs.lmu.edu/~ray/notes/nasmtutorial/)
