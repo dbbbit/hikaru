@@ -14,3 +14,9 @@
 - [Global Descriptor Table](http://wiki.osdev.org/Global_Descriptor_Table)
 - [GDT Tutorial](http://wiki.osdev.org/GDT_Tutorial)
 
+## IDT
+
+    中断／异常处理.
+
+## 
+- [Linux 内核完全剖析](http://book.douban.com/subject/1481173/)
