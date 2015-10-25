@@ -14,38 +14,7 @@ jmp 0x08:p_mode
 
 [bits 32]
 p_mode:
-    ;init_idt
-    mov eax, 0x10
-    mov ds, eax
-    mov ecx, 0x0
-    init_idt_item:
-        mov eax, 0x00080000 + handlers    ;selector, offset
-        add eax, ecx
-        mov dword [ds:idt + ecx*8], eax
-        mov eax, 0b1000111000000000 
-        mov dword [ds:idt + ecx*8 + 4], eax
-        add ecx, 1 
-        cmp ecx, 2
-        jl init_idt_item
-
-        ; div error raise -> handler0
-        mov eax, 0
-        mov ebx, 0
-        div ebx
-        ;int1 -> handler1
-        int 1
-
-dead:
-    jmp dead
-
-handlers:
-handler0:
-    mov eax, 0x2
-    mov ebx, 0x4
-    iret
-handler1:
-    mov eax, 0x1
-    jmp handler1
+    int 1
 
 gdt:
     ; null entry
@@ -70,9 +39,16 @@ gdtdesc:
     dd gdt              ;offset
 
 idt:
+    dq 0
+    dd 0x00080000 + handler1
+    dd 0b1000111000000000
+
 idtdesc:
-    dw 256 * 8          ;size
+    dw idtdesc - idt    ;size
     dd idt              ;offset
+
+handler1: jmp handler1
+
 
 times   510-($-$$)  db  0 
 db 0x55
