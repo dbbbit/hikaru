@@ -16,9 +16,12 @@ boot.o:	boot.asm
 main.o:	main.rs
 	$(RUSTC) -C opt-level=2 -Z no-landing-pads --target i686-unknown-linux-gnu -C relocation-model=static -g --emit obj -L build/libcore -o main.o main.rs
 
+main.s:	main.rs
+	$(RUSTC) -C opt-level=2 -Z no-landing-pads --target i686-unknown-linux-gnu -C relocation-model=static -g --emit asm -L build/libcore main.rs
+
 libcore:
 	mkdir -p build/libcore
 	$(RUSTC) -C opt-level=2 -Z no-landing-pads --target i686-unknown-linux-gnu -g external/rust-master/src/libcore/lib.rs --out-dir build/libcore
 
 clean:
-	rm -rf *.o *.lst *.bin kernel build
+	rm -rf *.o *.lst *.bin kernel build main.s

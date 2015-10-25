@@ -1,4 +1,4 @@
-#![feature(no_std, lang_items)]
+#![feature(no_std, lang_items, asm)]
 #![no_std]
 
 #[lang="stack_exhausted"] extern fn stack_exhausted() {}
@@ -19,9 +19,18 @@ fn main() {
             *((0xb8000 + i * 2) as *mut u16) = color_code;
         }
     }
+
     for idx in 0..19 {
         unsafe {
             *((0xb8000 + idx * 2) as *mut u16) = greeting[idx] as u16 + color_code;
         }
+    }
+
+    unsafe {
+        asm!("cli;
+              dead:\n
+                hlt;
+                jmp dead;"
+        )
     }
 }

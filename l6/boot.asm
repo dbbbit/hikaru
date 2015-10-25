@@ -56,18 +56,8 @@ _start:
     ; our stack (as it grows downwards).
     mov esp, stack_top
  
-    ; We are now ready to actually execute C code. We cannot embed that in an
-    ; assembly file, so we'll create a kernel.c file in a moment. In that file,
-    ; we'll create a C entry point called kernel_main and call it here.
+    ; We are now ready to actually execute Rust code. We cannot embed that in an
+    ; assembly file, so we'll create a kernel file in a moment. In that file,
+    ; we'll create a C entry point called main and call it here.
     extern main
     call main
- 
-    ; In case the function returns, we'll want to put the computer into an
-    ; infinite loop. To do that, we use the clear interrupt ('cli') instruction
-    ; to disable interrupts, the halt instruction ('hlt') to stop the CPU until
-    ; the next interrupt arrives, and jumping to the halt instruction if it ever
-    ; continues execution, just to be safe.
-    cli
-.hang:
-    hlt
-    jmp .hang
