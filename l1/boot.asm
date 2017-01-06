@@ -1,5 +1,3 @@
-	org 0x7C00
-
 	mov	ax, 0x42
 	jmp	$
 
