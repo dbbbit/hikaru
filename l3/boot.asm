@@ -1,27 +1,34 @@
 [bits 16]
 [org 0x7c00]
+		mov	ax, cs
+		mov	ds, ax
 
-define_the_consts:
-    p_buf equ 0xb800
-    msg db 'Hello, World...'
-    len equ $-msg
+		;read sector to es:bx
+		mov	ax, 0x60
+		mov	es, ax
+		mov	bx, 0
+		mov	ax, 0x0201 ;read 1 sector
+		mov	cx, 0x2 ;track 0, sector 2
+		mov 	dx, 0x0 ;driver 0
+		int	0x13
 
-init_target_addr:
-    mov ax, p_buf
-    mov es, ax
-    mov di, 0x0
+		;print msg read from disk
+		mov 	ax, 0xb800
+		mov 	ds, ax ;ds:di => screen buffer
+		mov 	di, 0x0
+		mov 	si, 0
+print		mov 	al, [es:si]
+		or  	al, al
+		jz 	print_done
+		mov 	[ds:di], al
+		add	di, 2
+		inc 	si
+		jmp	print
 
-mov si, 0
-print_loop: 
-    mov al, [msg+si] ;0x7c0 * 4 + 0 = 0x7c00
-    mov [es:di], al
-    inc si
-    add di, 2
-    cmp si, len
-    jl print_loop
+print_done	jmp $
 
-end:
-    jmp end
+		;end mark
+		times	510-($-$$)  db  0 
+		dw	0xaa55
 
-times   510-($-$$)  db  0 
-dw  0xaa55
+msg		db	"{42}", 0x0

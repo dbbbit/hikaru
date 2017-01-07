@@ -1,14 +1,19 @@
-run: floppy.img
+all: boot.img
+
+run: boot.img
 	qemu-system-i386 -fda $<
 
-debug: floppy.img
+debug: boot.img
 	qemu-system-i386 -fda $< -s -S
 
-floppy.img:	boot.bin
-	qemu-img create $@ 1.44k
-	dd if=$< of=$@ bs=512 count=1
+attach:
+	gdb -x gdb_setup
 
-boot.bin:	boot.asm	
+boot.img: boot.bin
+	qemu-img create $@ 1.44k
+	dd if=$< of=$@ bs=512 count=2
+
+boot.bin: boot.asm
 	nasm $< -f bin -l boot.lst -o $@
 
 clean:

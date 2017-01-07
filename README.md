@@ -2,9 +2,9 @@
 
 # Content
 
-* [Boot & Debug](https://github.com/dbbbit/hikaru/tree/master/l1)
+* [Boot debug](https://github.com/dbbbit/hikaru/tree/master/l1)
 * [IO & CMOS](https://github.com/dbbbit/hikaru/tree/master/l2)
-* [Output](https://github.com/dbbbit/hikaru/tree/master/l3)
+* [Read disk to screen](https://github.com/dbbbit/hikaru/tree/master/l3)
 * [A & B](https://github.com/dbbbit/hikaru/tree/master/l4)
 * [Grub](https://github.com/dbbbit/hikaru/tree/master/l5)
 * [Rust!](https://github.com/dbbbit/hikaru/tree/master/l6)
